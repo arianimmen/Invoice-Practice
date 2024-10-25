@@ -1,4 +1,4 @@
-function InvoiceOverview() {
+function InvoiceOverview({ allItems }) {
   return (
     <div className="absolute top-0 z-10 w-full px-2 md:px-7">
       <div
@@ -6,7 +6,7 @@ function InvoiceOverview() {
 "
       >
         <InvoiceInfo />
-        <InvoiceAmount />
+        <InvoiceAmount allItems={allItems} />
         <InvoiceNumber />
       </div>
     </div>
@@ -37,16 +37,26 @@ function InvoiceInfo() {
   );
 }
 
-function InvoiceAmount() {
+function InvoiceAmount({ allItems }) {
   return (
     <div className="hidden sm:flex flex-col items-end gap-y-2 bg-slate-50 border border-slate-200 py-4 px-4 rounded-lg justify-center sm:w-1/3 lg:px-9">
       <span className="text-xs">Amount due:</span>
       <div className="flex flex-col items-end">
-        <span className="text-xl font-bold md:text-2xl">$ 19,570.00</span>
+        <span className="text-xl font-bold md:text-2xl">
+          ${" "}
+          {allItems.reduce(
+            (accumulator, item) => accumulator + item.price * item.quantity,
+            0
+          )}
+        </span>
         <span className="font-bold text-slate-400 md:text-xl">USD</span>
       </div>
       <span className="font-bold text-slate-400 text-sm md:text-base">
-        July 26, 2024
+        {new Date().toLocaleDateString("en-US", {
+          day: "2-digit",
+          year: "numeric",
+          month: "short",
+        })}
       </span>
     </div>
   );
@@ -61,7 +71,13 @@ function InvoiceNumber() {
       </div>
       <div className="flex flex-col text-xs py-3 px-4 rounded-lg bg-slate-100 md:text-base">
         <span>Issued:</span>
-        <span className="font-bold">June 26, 2024</span>
+        <span className="font-bold">
+          {new Date().toLocaleDateString("en-US", {
+            day: "2-digit",
+            year: "numeric",
+            month: "short",
+          })}
+        </span>
       </div>
     </div>
   );
