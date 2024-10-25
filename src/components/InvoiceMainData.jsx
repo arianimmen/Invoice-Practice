@@ -10,16 +10,22 @@ function InvoiceMainData({ setAllItems, allItems }) {
   const [price, setPrice] = useState("");
 
   const handleDescription = (e) => {
-    e.preventDefault();
-    setDescription(e.target.value);
+    const value = e.target.value;
+    setDescription(value);
   };
 
   const handleQuantity = (e) => {
-    setQuantity(Number(e.target.value));
+    const value = e.target.value;
+    if (value < 0) {
+      alert("Quantity should be at least 0");
+    } else setQuantity(Number(value));
   };
 
   const handlePrice = (e) => {
-    setPrice(Number(e.target.value));
+    const value = e.target.value;
+    if (value < 0) {
+      alert("Price should be at least 0");
+    } else setPrice(Number(value));
   };
 
   const handleSubmit = (e) => {
@@ -30,9 +36,12 @@ function InvoiceMainData({ setAllItems, allItems }) {
       price,
       id: Date.now(),
     };
-    setAllItems((pre) => [...pre, newItem]);
-
-    handleClose(e);
+    if (price === 0 || quantity === 0 || description == "") {
+      alert("Please Complete the fields correctly!");
+    } else {
+      setAllItems((pre) => [...pre, newItem]);
+      handleClose(e);
+    }
   };
 
   const handleClose = (e) => {
