@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex justify-between w-full items-center mb-8 md:mb-9 px-2 md:px-7 relative">
+    <div className="flex justify-between w-full items-center mb-8 md:mb-9 px-2 md:px-7 relative mt-4 md:mt-0">
       {/* Header-left Section */}
       <div className="flex flex-col gap-y-1 text-slate-800">
         <h1 className="font-bold text-2xl md:text-3xl">BRIX Agency</h1>
@@ -55,7 +55,7 @@ function Header() {
         </svg>
       </div>
       <img
-        src="/src/assets/element.png"
+        src="/element.png"
         alt=""
         className="absolute -top-12 right-0"
       />

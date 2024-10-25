@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { TrashIcon } from "@heroicons/react/24/outline";
 
-function InvoiceMainData({ setAllItems, allItems }) {
+function InvoiceMainData({ setAllItems, allItems, handleDelete }) {
   // State for the Add Item Logic
   const [isAddClick, setIsAddClick] = useState(false);
 
@@ -70,7 +71,11 @@ function InvoiceMainData({ setAllItems, allItems }) {
             </thead>
             <tbody>
               {allItems.map((item) => (
-                <TableItem item={item} key={item.id} />
+                <TableItem
+                  item={item}
+                  key={item.id}
+                  handleDelete={handleDelete}
+                />
               ))}
             </tbody>
             <tfoot>
@@ -125,7 +130,7 @@ function InvoiceMainData({ setAllItems, allItems }) {
 
 export default InvoiceMainData;
 
-function TableItem({ item }) {
+function TableItem({ item, handleDelete }) {
   return (
     <tr className="even:bg-slate-50 rounded-lg">
       <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tl-lg rounded-bl-lg">
@@ -137,8 +142,9 @@ function TableItem({ item }) {
       <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap">
         $ {item.price}
       </td>
-      <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tr-lg rounded-br-lg ">
-        $ {item.price * item.quantity}
+      <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tr-lg rounded-br-lg flex items-center justify-center">
+        <div className="mr-2"> $ {item.price * item.quantity}</div>
+        <TrashIcon onClick={() => handleDelete(item.id)} className="size-4 cursor-pointer" />
       </td>
     </tr>
   );
