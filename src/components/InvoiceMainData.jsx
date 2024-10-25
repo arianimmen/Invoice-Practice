@@ -144,7 +144,10 @@ function TableItem({ item, handleDelete }) {
       </td>
       <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tr-lg rounded-br-lg flex items-center justify-center">
         <div className="mr-2"> $ {item.price * item.quantity}</div>
-        <TrashIcon onClick={() => handleDelete(item.id)} className="size-4 cursor-pointer" />
+        <TrashIcon
+          onClick={() => handleDelete(item.id)}
+          className="size-4 cursor-pointer text-red-500"
+        />
       </td>
     </tr>
   );
