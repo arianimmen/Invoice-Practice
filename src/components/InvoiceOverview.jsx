@@ -1,4 +1,4 @@
-function InvoiceOverview({ allItems }) {
+function InvoiceOverview({ children }) {
   return (
     <div className="absolute top-0 z-10 w-full px-2 md:px-7">
       <div
@@ -6,7 +6,7 @@ function InvoiceOverview({ allItems }) {
 "
       >
         <InvoiceInfo />
-        <InvoiceAmount allItems={allItems} />
+        {children}
         <InvoiceNumber />
       </div>
     </div>
@@ -37,7 +37,7 @@ function InvoiceInfo() {
   );
 }
 
-function InvoiceAmount({ allItems }) {
+export function InvoiceAmount({ allItems }) {
   return (
     <div className="hidden sm:flex flex-col items-end gap-y-2 bg-slate-50 border border-slate-200 py-4 px-4 rounded-lg justify-center sm:w-1/3 lg:px-9">
       <span className="text-xs">Amount due:</span>
