@@ -1,6 +1,7 @@
 # Invoice Practice
 
-![Screenshot from 2024-10-25 20-26-54](https://github.com/user-attachments/assets/a734ff40-db74-4e87-b66a-a251b1f98d58)
+![Screenshot from 2024-10-26 12-20-34](https://github.com/user-attachments/assets/9dea49b4-2ad0-49a6-8b77-245c93ec6606)
+
 
 ## Description
 
