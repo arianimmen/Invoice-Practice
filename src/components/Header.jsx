@@ -1,10 +1,18 @@
 function Header() {
   return (
-    <div className="flex justify-between w-full items-center mb-8 md:mb-9 px-2 md:px-7 relative mt-4 md:mt-0">
+    <div className="flex justify-between w-full items-center mb-8 md:mb-9 px-2 md:px-7 relative mt-4 md:mt-0 gap-x-2">
       {/* Header-left Section */}
-      <div className="flex flex-col gap-y-1 text-slate-800">
-        <h1 className="font-bold text-2xl md:text-3xl">BRIX Agency</h1>
-        <p className="text-xs ">12345 6789 Us00001</p>
+      <div className="flex flex-col gap-y-1 text-slate-800 ">
+        <input
+          className="font-bold text-2xl md:text-3xl !bg-white"
+          type="text"
+          placeholder="Company Name"
+        ></input>
+        <input
+          className="text-xs bg-white"
+          type="text"
+          placeholder="Invoice ID"
+        ></input>
       </div>
       {/* Header-right Section */}
       <div>
@@ -54,11 +62,7 @@ function Header() {
           />
         </svg>
       </div>
-      <img
-        src="/element.png"
-        alt=""
-        className="absolute -top-12 right-0"
-      />
+      <img src="/element.png" alt="" className="absolute -top-12 right-0" />
     </div>
   );
 }
