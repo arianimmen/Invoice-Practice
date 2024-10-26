@@ -40,7 +40,11 @@ function InvoiceMainData({ setAllItems, allItems, handleDelete }) {
     if (price === 0 || quantity === 0 || description == "") {
       alert("Please Complete the fields correctly!");
     } else {
-      setAllItems((pre) => [...pre, newItem]);
+      setAllItems((pre) => {
+        const updatedItems = [...pre, newItem];
+        localStorage.setItem("data", JSON.stringify(updatedItems));
+        return updatedItems;
+      });
       handleClose(e);
     }
   };

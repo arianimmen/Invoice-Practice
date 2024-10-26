@@ -7,11 +7,17 @@ import "./tailwind.css";
 
 function App() {
   // All list
-  const [allItems, setAllItems] = useState([]);
+  const [allItems, setAllItems] = useState(
+    JSON.parse(localStorage.getItem("data")) || []
+  );
 
   const handleDelete = (id) => {
     const items = [...allItems];
-    setAllItems(items.filter((item) => item.id != id));
+    setAllItems(() => {
+      const updatedItems = items.filter((item) => item.id != id);
+      localStorage.setItem("data", JSON.stringify(updatedItems));
+      return updatedItems;
+    });
   };
 
   return (
