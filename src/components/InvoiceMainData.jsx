@@ -67,7 +67,7 @@ function InvoiceMainData({ setAllItems, allItems, handleDelete }) {
           <table className="w-full border-separate border-spacing-y-2">
             <thead>
               <tr>
-                <th className="p-3 text-sm md:text-base pl-20 min-[400px]:pl-0">
+                <th className="p-3 text-sm md:text-base pl-28 min-[416px]:pl-0">
                   Description
                 </th>
                 <th className="p-3 text-sm md:text-base">Qty</th>
@@ -139,7 +139,7 @@ export default InvoiceMainData;
 function TableItem({ item, handleDelete }) {
   return (
     <tr className="even:bg-slate-50 rounded-lg">
-      <td className="pl-20 min-[400px]:pl-0 text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tl-lg rounded-bl-lg">
+      <td className="pl-28 min-[416px]:pl-0 text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tl-lg rounded-bl-lg">
         {item.description}
       </td>
       <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap">
