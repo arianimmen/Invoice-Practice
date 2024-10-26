@@ -62,7 +62,6 @@ function Header() {
           />
         </svg>
       </div>
-      <img src="/element.png" alt="" className="absolute -top-12 right-0" />
     </div>
   );
 }
