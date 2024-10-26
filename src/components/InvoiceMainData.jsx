@@ -93,7 +93,7 @@ function InvoiceMainData({ setAllItems, allItems, handleDelete }) {
                 <td></td>
                 <td className="flex justify-center">
                   <div className="flex flex-col justify-end items-end pt-6">
-                    <span className="text-xs mb-1">TOTAL AMOUNT:</span>
+                    <span className="text-xs mb-1 whitespace-nowrap">TOTAL AMOUNT:</span>
                     <span className="font-bold text-xl text-blue-600 whitespace-nowrap">
                       ${" "}
                       {allItems.reduce(

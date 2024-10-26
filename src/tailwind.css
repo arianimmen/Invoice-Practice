@@ -1165,18 +1165,6 @@ select {
 }
 
 @media (min-width: 330px) {
-  .min-\[330px\]\:pl-16 {
-    padding-left: 4rem;
-  }
-
-  .min-\[330px\]\:pl-1 {
-    padding-left: 0.25rem;
-  }
-
-  .min-\[330px\]\:pl-2 {
-    padding-left: 0.5rem;
-  }
-
   .min-\[330px\]\:pl-20 {
     padding-left: 5rem;
   }
