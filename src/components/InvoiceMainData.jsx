@@ -56,14 +56,16 @@ function InvoiceMainData({ setAllItems, allItems, handleDelete }) {
   return (
     <div className="bg-slate-100 relative top-24 w-full  rounded-2xl px-7">
       {/* content */}
-      <div className="mt-28 mb-6 relative overflow-auto items-center w-full flex flex-col">
+      <div className="mt-28 mb-6 relative overflow-x-auto items-center  flex flex-col  ">
         {allItems.length === 0 ? (
           <span className="m-4">Your List is Empty!</span>
         ) : (
           <table className="w-full border-separate border-spacing-y-2">
             <thead>
               <tr>
-                <th className="p-3 text-sm md:text-base">Description </th>
+                <th className="p-3 text-sm md:text-base pl-20 min-[400px]:pl-0">
+                  Description
+                </th>
                 <th className="p-3 text-sm md:text-base">Qty</th>
                 <th className="p-3 text-sm md:text-base">Price</th>
                 <th className="p-3 text-sm md:text-base">Total</th>
@@ -133,7 +135,7 @@ export default InvoiceMainData;
 function TableItem({ item, handleDelete }) {
   return (
     <tr className="even:bg-slate-50 rounded-lg">
-      <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tl-lg rounded-bl-lg">
+      <td className="pl-20 min-[400px]:pl-0 text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap rounded-tl-lg rounded-bl-lg">
         {item.description}
       </td>
       <td className="text-center text-sm md:text-base min-w-20 p-3 whitespace-nowrap">
