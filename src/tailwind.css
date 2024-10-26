@@ -1164,17 +1164,21 @@ select {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 340px) {
-  .min-\[340px\]\:pl-20 {
-    padding-left: 5rem;
+@media (min-width: 330px) {
+  .min-\[330px\]\:pl-16 {
+    padding-left: 4rem;
   }
 
-  .min-\[340px\]\:pl-1 {
+  .min-\[330px\]\:pl-1 {
     padding-left: 0.25rem;
   }
 
-  .min-\[340px\]\:pl-12 {
-    padding-left: 3rem;
+  .min-\[330px\]\:pl-2 {
+    padding-left: 0.5rem;
+  }
+
+  .min-\[330px\]\:pl-20 {
+    padding-left: 5rem;
   }
 }
 
